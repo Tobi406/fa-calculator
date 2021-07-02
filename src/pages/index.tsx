@@ -1,3 +1,5 @@
+import { FC } from 'react';
+import { ReactElement } from 'react';
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -5,6 +7,8 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `
 
-export default function Home() {
+const Home: FC<{}> = (): ReactElement => {
   return <Title>My page</Title>
 }
+
+export default Home;

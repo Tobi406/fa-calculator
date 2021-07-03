@@ -18,8 +18,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const theme = {
+  // for some colours see:
+  // https://ec.europa.eu/component-library/v1.14.2/ec/components/detail/ec-style-color/
   colors: {
+    primaryDark: '#003776',
     primary: '#004494',
+    primaryLight: '#7FA1C9',
     secondary: '#FFD617',
     white: '#FFFFFF',
   },
@@ -27,9 +31,11 @@ const theme = {
 
 const Page = styled.div`
   display: flex;
+  position: relative;
 `;
 const Container = styled.div`
   display: flex;
+  flex: 1 1 85%;
   flex-direction: column;
   width: fill-available;
 `;

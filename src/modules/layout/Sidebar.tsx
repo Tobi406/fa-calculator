@@ -6,11 +6,13 @@ import styled, { css } from "styled-components";
 const Container = styled.aside<{
   sidebarOpen: boolean
 }>`
+  flex: 1 1 15%;
   top: 0;
   z-index: 2;
   position: sticky;
   left: -100%;
   display: initial;
+  overflow-y: auto;
 
   width: 108px;
   height: 100vh;
@@ -19,10 +21,21 @@ const Container = styled.aside<{
   border-right: 2px solid ${({ theme }) => theme.colors.primary};
   transition: left 1.5s;
 
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: ${({ theme }) => theme.colors.white};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({ theme }) => theme.colors.white};
+    border-radius: 20px;
+  }
+
 
   @media screen and (max-width: 960px) {
     position: absolute;
     transition: left .5s;
+    height: 100%;
 
     ${props => props.sidebarOpen && css`
       left: 0;

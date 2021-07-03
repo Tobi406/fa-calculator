@@ -9,7 +9,7 @@ interface CSSProperties {
 
 const CSS = css<CSSProperties>`
   ${props => props.textAlign ? css`text-align: ${props.textAlign};` : ''}
-  ${props => css`color: ${props.color.startsWith('$') ? props.theme.colors[props.color.replace('$', '')] : props.color};`}
+  ${props => props.color && css`color: ${props.color.startsWith('$') ? props.theme.colors[props.color.replace('$', '')] : props.color};`}
   ${props => props.fontSize && css`font-size: ${props.fontSize};`}
 `
 

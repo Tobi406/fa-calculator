@@ -14,7 +14,7 @@ const Container = styled.aside<{
   display: initial;
   overflow-y: auto;
 
-  width: 108px;
+  min-width: 108px;
   height: 100vh;
 
   background-color: ${({ theme }) => theme.colors.white};

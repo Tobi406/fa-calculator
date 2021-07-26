@@ -12,9 +12,7 @@ const Container = styled.div`
   }
 `;
 
-const Footer: FC<{
-  children: React.ReactNode
-}> = ({ children }): ReactElement => {
+const Footer: FC<{}> = ({ children }): ReactElement => {
   return <Container>
     {children}
   </Container>

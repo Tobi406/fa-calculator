@@ -8,7 +8,7 @@ const Container = styled.aside<{
 }>`
   flex: 1 1 15%;
   top: 0;
-  z-index: 2;
+  z-index: 100;
   position: sticky;
   left: -100%;
   display: initial;

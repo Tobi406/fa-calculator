@@ -1,0 +1,181 @@
+{
+  "parties": {
+    "LINKE": "#BE3075",
+    "SPD": "#E3000F",
+    "GRÜNE": "#46962b",
+    "SSW": "#003c8f",
+    "FDP": "#ffff00",
+    "FW": "#FF8000",
+    "Union": "#000000",
+    "LKR": "#f39200",
+    "BIW": "#005ab0",
+    "AfD": "#009ee0",
+    "NPD": "#8b4726",
+    "Independent": "#696969"
+  },
+  "population": {
+    "DE": 83155031,
+    "BW": 11103043,
+    "BY": 13140183,
+    "BE":  3664088,
+    "BB":  2531071,
+    "HB":   680130,
+    "HH":  1852478,
+    "HE":  6293154,
+    "MV":  1610774,
+    "NI":  8003421,
+    "NW": 17925570,
+    "RP":  4098391,
+    "SL":   983991,
+    "SN":  4056941,
+    "ST":  2180684,
+    "SH":  2910875,
+    "TH":  2120237
+  },
+  "parliaments": {
+    "DE": {
+      "LINKE": 69,
+      "SPD": 152,
+      "GRÜNE": 67,
+      "Union": 245,
+      "FDP": 80,
+      "AfD": 86,
+      "Independent": 10
+    },
+    "BW": {
+      "SPD": 19,
+      "GRÜNE": 58,
+      "FDP": 18,
+      "Union": 42,
+      "AfD": 17 
+    },
+    "BY": {
+      "SPD": 22,
+      "GRÜNE": 38,
+      "FDP": 11,
+      "FW": 27,
+      "Union": 85,
+      "AfD": 19,
+      "Independent": 3
+    },
+    "BE": {
+      "LINKE": 27,
+      "SPD": 38,
+      "GRÜNE": 27,
+      "FDP": 11,
+      "FW": 1,
+      "Union": 31,
+      "AfD": 24,
+      "NPD": 1,
+      "Independent": 1
+    },
+    "BB": {
+      "LINKE": 10,
+      "SPD": 25,
+      "GRÜNE": 10,
+      "FW": 5,
+      "Union": 15,
+      "AfD": 23
+    },
+    "HB": {
+      "LINKE": 10,
+      "SPD": 23,
+      "GRÜNE": 16,
+      "FDP": 5,
+      "Union": 24,
+      "LKR": 1,
+      "BIW": 1,
+      "AfD": 1,
+      "Independent": 1
+    },
+    "HH": {
+      "LINKE": 13,
+      "SPD": 54,
+      "GRÜNE": 33,
+      "FDP": 1,
+      "Union": 15,
+      "AfD": 6,
+      "Independent": 1
+    },
+    "HE": {
+      "LINKE": 6,
+      "SPD": 29,
+      "GRÜNE": 29,
+      "FDP": 11,
+      "Union": 40,
+      "AfD": 18,
+      "Independent": 1
+    },
+    "MV": {
+      "LINKE": 11,
+      "SPD": 26,
+      "Union": 18,
+      "AfD": 14,
+      "Independent": 2
+    },
+    "NI": {
+      "SPD": 54,
+      "GRÜNE": 12,
+      "FDP": 11,
+      "Union": 50,
+      "LKR": 2,
+      "AfD": 7,
+      "Independent": 1
+    },
+    "NW": {
+      "SPD": 69,
+      "GRÜNE": 14,
+      "FDP": 28,
+      "Union": 72,
+      "AfD": 13,
+      "Independent": 3
+    },
+    "RP": {
+      "SPD": 39,
+      "GRÜNE": 10,
+      "FDP": 6,
+      "FW": 6,
+      "Union": 31,
+      "AfD": 9
+    },
+    "SL": {
+      "LINKE": 7,
+      "SPD": 17,
+      "Union": 24,
+      "AfD": 3
+    },
+    "SN": {
+      "LINKE": 14,
+      "SPD": 10,
+      "GRÜNE": 12,
+      "Union": 45,
+      "AfD": 36,
+      "Independent": 2
+    },
+    "ST": {
+      "LINKE": 12,
+      "SPD": 9,
+      "GRÜNE": 6,
+      "Union": 40,
+      "AfD": 23
+    },
+    "SH": {
+      "SPD": 21,
+      "GRÜNE": 10,
+      "SSW": 3,
+      "FDP": 9,
+      "Union": 25,
+      "LKR": 1,
+      "AfD": 3,
+      "Independent": 1
+    },
+    "TH": {
+      "LINKE": 29,
+      "SPD": 8,
+      "GRÜNE": 5,
+      "FDP": 5,
+      "Union": 21,
+      "AfD": 22
+    }
+  }
+}

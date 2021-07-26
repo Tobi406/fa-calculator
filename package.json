@@ -1,28 +1,47 @@
 {
-  "name": "with-styled-components",
+  "name": "fa-calculator",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "exportbuild": "npm run build && npm run export",
+    "exportrun": "npm run exportbuild && serve out"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^11.0.1",
     "@reduxjs/toolkit": "^1.6.0",
-    "@types/styled-components": "^5.1.10",
+    "dhondt": "^0.1.0",
+    "html-to-react": "^1.4.5",
     "next": "latest",
+    "next-compose-plugins": "^2.2.1",
+    "next-pwa": "^5.2.24",
+    "parliament-svg": "^2.1.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-purgecss": "^2.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-is": "^17.0.2",
     "react-redux": "^7.2.4",
-    "styled-components": "^5.2.3"
+    "sass": "^1.36.0",
+    "styled-components": "^5.2.3",
+    "svgo": "^2.3.1",
+    "vdom-to-html": "^2.3.1"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^1.5.4",
     "@types/react": "^17.0.13",
+    "@types/styled-components": "^5.1.11",
     "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.31.0",
+    "eslint-config-next": "^11.0.1",
+    "serve": "^12.0.0",
     "typescript": "^4.3.5"
   },
   "license": "MIT"

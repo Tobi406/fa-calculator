@@ -9,6 +9,7 @@ import { change } from './sidebarSlice'
 
 const Container = styled.header`
   top: 0;
+  z-index: 50;
   position: sticky;
   
   display: flex;
@@ -39,7 +40,7 @@ const Header: FC<{}> = (): ReactElement => {
       color="$primary"
       fontSize="24px"
     >
-      Eur-Reps
+      Federal Assembly Calculator
     </Text>
   </Container>
 }

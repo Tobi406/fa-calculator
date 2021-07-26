@@ -1,12 +1,17 @@
 import { AppProps } from 'next/app'
 import { ReactElement } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import Sidebar from '../modules/layout/Sidebar'
 import Header from '../modules/layout/Header'
-import { Provider, useSelector } from 'react-redux'
-import { RootState, store } from '../store';
+import { Provider } from 'react-redux'
+import { store } from '../store';
 import Overlay from 'src/modules/layout/Overlay'
 import Footer from 'src/modules/layout/Footer'
+import Head from 'next/head';
+
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
+
+import 'styles.scss';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -15,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
-`
+`;
 
 const theme = {
   // for some colours see:
@@ -44,25 +49,42 @@ const Content = styled.div``;
 export default function App({ Component, pageProps }: AppProps): ReactElement  {
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Calculate the current Federal Assembly composition"
+        />
+        <meta
+          name="theme-color"
+          content="#004494"
+        />
+        <meta
+          name="keywords"
+          content="Federal Assembly, Bundesversammlung, Calculator, Rechner"
+        />
+        <title>FA-Calculator</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <GlobalStyle />
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Overlay />
           <Page>
-            <Sidebar />
+            {/*<Sidebar />*/}
             <Container>
               <Header />
               <Content>
-                {[0,0,0,0,0,0,0,0,0,0,0,0,0,0].map(n => <Component {...pageProps} />)}
+                <Component {...pageProps} />
               </Content>
               <Footer>
-                This website is not connected with, and does not benefit from the support, sponsorship, approval or consent of, any of the institutions, bodies, offices, agencies and organs of the European Union or the Council of Europe
+                Made with &lt;3 <br /> Deviations to be expected
               </Footer>
             </Container>
           </Page>
         </ThemeProvider>
       </Provider>
-
     </>
   )
 }

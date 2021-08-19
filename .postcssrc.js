@@ -1,3 +1,5 @@
+
+
 module.exports = {
   plugins: [
     'postcss-flexbugs-fixes',
@@ -13,16 +15,16 @@ module.exports = {
         },
       },
     ],
-    [
-      'postcss-purgecss',
-      {
-        content: [
-          './src/**/*.{js,jsx,ts,tsx}',
-          './src/**/**/*.{js,jsx,ts,tsx}',
-        ],
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body"],
-      },
-    ],
+    //[
+    //  'postcss-purgecss',
+    //  {
+    //    content: [
+    //      './src/**/*.{js,jsx,ts,tsx}',
+    //      './src/**/**/*.{js,jsx,ts,tsx}',
+    //    ],
+    //    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+    //    safelist: ["html", "body"],
+    //  },
+    //],
   ],
 };

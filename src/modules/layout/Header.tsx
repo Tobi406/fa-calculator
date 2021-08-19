@@ -2,9 +2,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FC, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import Icon from "../../common/Icon";
-import Text from "../../common/Text";
-import { RootState } from '../../store'
+import Icon from "src/common/Icon";
+import Text from "src/common/Text";
+import { RootState } from 'src/store'
 import { change } from './sidebarSlice'
 
 const Container = styled.header`

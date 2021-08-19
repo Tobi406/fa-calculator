@@ -50,13 +50,15 @@ const PartyAdder: FC<{}> = (): ReactElement => {
             <td>
               Color
             </td>
-            <ColorData>
-              <Input
-                value={color}
-                onChange={(e) => setColor(e.target.value)}
-              />&nbsp;
-              <ColorDisplay color={color} />
-            </ColorData>
+            <td>
+              <ColorData>
+                <Input
+                  value={color}
+                  onChange={(e) => setColor(e.target.value)}
+                />&nbsp;
+                <ColorDisplay color={color} />
+              </ColorData>
+            </td>
           </tr>
         </tbody>
       </table>

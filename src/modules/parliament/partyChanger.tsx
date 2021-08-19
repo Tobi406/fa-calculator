@@ -5,7 +5,7 @@ import ColorDisplay from "src/common/ColorDisplay";
 import Icon from "src/common/Icon";
 import { RootState } from "src/store";
 import styled, { css } from "styled-components";
-import { addParty, removeParty, moveParty, partySeats, movePartyGlobal } from "./parliamentSlice";
+import { addParty, removeParty, moveParty, partySeats, movePartyGlobal, removePartyGlobal } from "./parliamentSlice";
 
 const PartyData = styled.td`
   display: flex;
@@ -35,12 +35,14 @@ const PartyChanger: FC<{
   moveDisabled?: boolean,
   inputDisabled?: boolean,
   addDisabled?: boolean,
+  removeGlobal?: boolean,
   removeDisabled?: boolean,
 }> = ({
   parties,
   state, 
   moveDisabled = false,
   inputDisabled = false,
+  removeGlobal = false,
   removeDisabled = false,
   addDisabled = false
 }): ReactElement => {
@@ -124,15 +126,22 @@ const PartyChanger: FC<{
                 icon={faTimes}
                 color="red"
                 onClick={() => {
-                  dispatch(removeParty({
-                    state: state,
-                    party: key,
-                  }));
-                  if (addParties.length < 1) {
-                    setSelectedParty([
-                      ...addParties,
-                      ...[[key, parties[key].colour]]
-                    ][0]?.[0] ?? '');
+                  if (!removeGlobal) {
+                    dispatch(removeParty({
+                      state: state,
+                      party: key,
+                    }));
+                    if (addParties.length < 1) {
+                      setSelectedParty([
+                        ...addParties,
+                        ...[[key, parties[key].colour]]
+                      ][0]?.[0] ?? '');
+                    }
+                  } else {
+                    console.log('test', index);
+                    dispatch(removePartyGlobal({
+                      party: key,
+                    }));
                   }
                 }}
               />}

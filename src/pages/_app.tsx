@@ -11,7 +11,9 @@ import Head from 'next/head';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'styles.scss';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,7 +34,7 @@ const theme = {
     secondary: '#FFD617',
     white: '#FFFFFF',
   },
-}
+};
 
 const Page = styled.div`
   display: flex;
@@ -63,6 +65,10 @@ export default function App({ Component, pageProps }: AppProps): ReactElement  {
           name="keywords"
           content="Federal Assembly, Bundesversammlung, Calculator, Rechner"
         />
+        <meta
+          name="robots"
+          content="noindex,follow"
+        />
         <title>FA-Calculator</title>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
@@ -79,7 +85,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement  {
                 <Component {...pageProps} />
               </Content>
               <Footer>
-                Made with &lt;3 <br /> Deviations to be expected
+                Made with &lt;3 (and apple juice) <br /> Deviations to be expected
               </Footer>
             </Container>
           </Page>

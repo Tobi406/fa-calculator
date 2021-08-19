@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import dataRaw from 'public/data.json';
 
 const dhondt = require('dhondt');
+const sainteLague = require('sainte-lague');
 
 interface Data {
   parties: {
@@ -63,26 +64,24 @@ const assignSeats = (data: {[key: string]: number}, totalSeats: number) => {
     })
   );
   console.log(modifiedResults);
-  //let divisor = getTotal(data)/totalSeats;
-  //let seats: {[key: string]: number} = {};
-  //while (getTotal(seats) < totalSeats) {
-  //  Object.entries(data).forEach(([key, value]) => {
-  //    seats[key] = Math.round(value/divisor);
-  //  });
-  //  divisor -= divisor*0.0001;
-  //}
-  //while (getTotal(seats) > totalSeats) {
-  //  Object.entries(data).forEach(([key, value]) => {
-  //    seats[key] = Math.round(value/divisor);
-  //  });
-  //  divisor += divisor*0.0001;
-  //}
-  //console.log(seats);
   return modifiedResults;
 };
+const assignSeatsSainteLague = (data: {[key: string]: number}, totalSeats: number) => {
+  const results: {[key: string]: number} = sainteLague(data, totalSeats, {
+    draw: true,
+  });
+  const modifiedResults = Object.fromEntries(
+    Object.entries(results)
+      .filter(([party, seats]) => {
+        return seats > 0;
+      })
+  );
+  console.log(modifiedResults);
+  return modifiedResults;
+}
 const getSeatsCount = (popData: {[key: string]: number}, totalSeats: number) => {
   return {
-    ...assignSeats(popData, totalSeats),
+    ...assignSeatsSainteLague(popData, totalSeats),
     "DE": totalSeats,
   };
 }
@@ -108,11 +107,6 @@ const initialState: ParliamentState = {
   population: data.population,
   seatsCount: getInititalSeatsCount,
   seats: getSeats(getInititalSeatsCount),
-}
-
-const reloadSeatsCount = (state: ParliamentState) => {
-  state.seatsCount = getSeatsCountStates(state.population, getTotal(state.parliaments['DE']));
-  state.seats = getSeats(state.seatsCount);
 }
 
 export const parliamentSlice = createSlice({
@@ -160,6 +154,25 @@ export const parliamentSlice = createSlice({
       }
       state.seats[action.payload.state] = assignSeats(state.parliaments[action.payload.state], state.seatsCount[action.payload.state]);
     },
+    removePartyGlobal: (state, action: PayloadAction<{party: string}>) => {
+      delete state.parties[action.payload.party];
+      const parliamentKeys = Object.keys(state.parliaments);
+      parliamentKeys.forEach(parliament => {
+        if (action.payload.party in state.parliaments[parliament]) {
+          delete state.parliaments[parliament][action.payload.party];
+          if (parliament === 'DE') {
+            state.seatsCount = {
+              ...getSeatsCountStates(state.population, getTotal(state.parliaments['DE'])),
+              DE: getTotal(state.parliaments['DE']),
+            };
+          }
+        }
+      });
+
+      parliamentKeys.forEach(parliament => {
+        state.seats[parliament] = assignSeats(state.parliaments[parliament], state.seatsCount[parliament]);
+      });
+    },
     moveParty: (state, action: PayloadAction<{state: string, oldIndex: number, newIndex: number}>) => {
       const parties = Object.entries(state.parliaments[action.payload.state]);
       const party = parties[action.payload.oldIndex];
@@ -181,6 +194,6 @@ export const parliamentSlice = createSlice({
   },
 })
 
-export const { addParty, removeParty, moveParty, movePartyGlobal, addPartyGlobal, partySeats, changePopulation } = parliamentSlice.actions
+export const { addParty, removeParty, moveParty, movePartyGlobal, removePartyGlobal, addPartyGlobal, partySeats, changePopulation } = parliamentSlice.actions
 
 export default parliamentSlice.reducer

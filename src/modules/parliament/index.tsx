@@ -80,7 +80,7 @@ const Parliament: FC<{
               state={title}
               inputDisabled={typeof faParties === 'boolean'}
               addDisabled={typeof faParties === 'boolean'}
-              removeDisabled={typeof faParties === 'boolean'}              
+              removeGlobal={typeof faParties === 'boolean'}              
             />
             <Close>
               <Text color="$primary">
@@ -98,7 +98,7 @@ const Parliament: FC<{
           parties={parties}
         />
       </>}
-      {typeof faParties !== 'boolean' && <Dropdown
+      {typeof faParties !== 'boolean' ? <Dropdown
         title={
           <Text color="$primary">
             View delegates to Federal Assembly
@@ -134,7 +134,7 @@ const Parliament: FC<{
         <Semicircle
           parties={faParties}
         />
-      </Dropdown>}
+      </Dropdown> : ''}
     </Container>
   )
 }

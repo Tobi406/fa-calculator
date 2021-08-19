@@ -1,7 +1,5 @@
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FC, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Icon from "src/common/Icon";
 import Text from "src/common/Text";
 import { RootState } from "src/store";
 import styled from "styled-components";
@@ -29,6 +27,13 @@ const PopulationChanger: FC<{}> = (): ReactElement => {
       </Text>
       <table>
         <tbody>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>
+              Seats
+            </th>
+          </tr>
           {Object.entries(useSelector((state: RootState) => state.parliaments.population))
             .map(([key, value], index) => {
               return <tr key={index}>
@@ -44,6 +49,9 @@ const PopulationChanger: FC<{}> = (): ReactElement => {
                       population: e.target.value !== '' ? parseInt(e.target.value) : 0,
                     }))}}
                   />
+                </td>
+                <td>
+                  {useSelector((state: RootState) => state.parliaments.seatsCount[key])}
                 </td>
               </tr>
             })

@@ -1,6 +1,5 @@
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 import React, { FC, ReactElement } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   bottom: 0;

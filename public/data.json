@@ -34,13 +34,12 @@
   },
   "parliaments": {
     "DE": {
-      "LINKE": 69,
-      "SPD": 152,
-      "GRÜNE": 67,
-      "Union": 245,
-      "FDP": 80,
-      "AfD": 86,
-      "Independent": 10
+      "LINKE": 39,
+      "SPD": 206,
+      "GRÜNE": 118,
+      "Union": 196,
+      "FDP": 92,
+      "AfD": 83
     },
     "BW": {
       "SPD": 19,
@@ -59,15 +58,12 @@
       "Independent": 3
     },
     "BE": {
-      "LINKE": 27,
-      "SPD": 38,
-      "GRÜNE": 27,
-      "FDP": 11,
-      "FW": 1,
-      "Union": 31,
-      "AfD": 24,
-      "NPD": 1,
-      "Independent": 1
+      "LINKE": 24,
+      "SPD": 36,
+      "GRÜNE": 32,
+      "FDP": 12,
+      "Union": 30,
+      "AfD": 13
     },
     "BB": {
       "LINKE": 10,
@@ -107,11 +103,12 @@
       "Independent": 1
     },
     "MV": {
-      "LINKE": 11,
-      "SPD": 26,
-      "Union": 18,
-      "AfD": 14,
-      "Independent": 2
+      "LINKE": 9,
+      "SPD": 34,
+      "GRÜNE": 5,
+      "FDP": 5,
+      "Union": 12,
+      "AfD": 14
     },
     "NI": {
       "SPD": 54,
